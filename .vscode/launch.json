@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'time-teller'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=time-teller",
+                    "--package=time-teller"
+                ],
+                "filter": {
+                    "name": "time-teller",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "env": {
+                "TT_DEBUG": "true"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'time-teller'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=time-teller",
+                    "--package=time-teller"
+                ],
+                "filter": {
+                    "name": "time-teller",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "env": {
+                "TT_DEBUG": "false"
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
